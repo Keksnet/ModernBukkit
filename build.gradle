@@ -6,7 +6,7 @@ plugins {
 
 group = 'de.neo'
 archivesBaseName = 'ModernBukkit'
-version = '1.17'
+version = '1.18'
 
 repositories {
     mavenCentral()
@@ -30,12 +30,11 @@ publishing {
 
     repositories {
         maven {
-            name 'local-repo'
-            allowInsecureProtocol true
-            url 'http://192.168.12.208:8081/repository/neo-repo/'
+            name 'nono-repo'
+            url 'https://repo.nononitas.eu/artifactory/keinsurvival-public/'
             credentials {
-                username = property("local.user")
-                password = property("local.pass")
+                username = property("repo.user")
+                password = property("repo.pass")
             }
         }
     }
