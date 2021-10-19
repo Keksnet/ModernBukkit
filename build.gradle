@@ -1,0 +1,42 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.5.31'
+    id 'maven-publish'
+    id 'java'
+}
+
+group = 'de.neo'
+archivesBaseName = 'ModernBukkit'
+version = '1.13'
+
+repositories {
+    mavenCentral()
+    maven {
+        name 'spigot-repo'
+        url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+    }
+}
+
+dependencies {
+    compileOnly 'org.spigotmc:spigot-api:1.17-R0.1-SNAPSHOT'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.5.31'
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
+
+    repositories {
+        maven {
+            name 'local-repo'
+            allowInsecureProtocol true
+            url 'http://192.168.12.208:8081/repository/neo-repo/'
+            credentials {
+                username = property("local.user")
+                password = property("local.pass")
+            }
+        }
+    }
+}
