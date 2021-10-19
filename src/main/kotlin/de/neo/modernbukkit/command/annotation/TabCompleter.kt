@@ -1,4 +1,4 @@
-package de.neo.modernbukkit.command
+package de.neo.modernbukkit.command.annotation
 
 @Retention(AnnotationRetention.RUNTIME)
 @Target(AnnotationTarget.FUNCTION)

@@ -6,7 +6,7 @@ plugins {
 
 group = 'de.neo'
 archivesBaseName = 'ModernBukkit'
-version = '1.13'
+version = '1.17'
 
 repositories {
     mavenCentral()
