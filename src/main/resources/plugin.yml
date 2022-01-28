@@ -2,4 +2,6 @@ name: ModernBukkit
 author: Neo8
 version: 1.18
 api-version: 1.17
+softdepend:
+  - PlHidePro
 main: de.neo.modernbukkit.loader.ModernBukkitLoader

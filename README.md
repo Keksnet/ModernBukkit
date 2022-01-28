@@ -15,6 +15,7 @@ ___
     - [Registering subcommands](#registering-subcommands)
     - [Using @TabCompletion](#using-tabcompletion)
     - [Custom TabCompleter](#custom-tabcompleter)
+- [Todo](#todo)
 
 
 ## Why should I use ModernBukkit?
@@ -272,6 +273,10 @@ public class TestCommand {
 ```
 
 That are the basics for ModernBukkit. I hope you have fun.
+
+## Todo
+- PlHidePro support
+- JAGIL support
 
 ## Support
 You can get support on the following platforms.

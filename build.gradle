@@ -1,12 +1,17 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.5.31'
+    id 'org.jetbrains.kotlin.jvm' version '1.6.0'
     id 'maven-publish'
     id 'java'
+    id 'com.github.johnrengelman.shadow' version '6.1.0'
+}
+
+shadowJar {
+    archiveClassifier.set('')
 }
 
 group = 'de.neo'
 archivesBaseName = 'ModernBukkit'
-version = '1.18'
+version = '1.18.5'
 
 repositories {
     mavenCentral()
@@ -14,17 +19,22 @@ repositories {
         name 'spigot-repo'
         url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
     }
+    maven {
+        name 'neo-repo'
+        url 'https://repo.neo8.de/'
+    }
 }
 
 dependencies {
     compileOnly 'org.spigotmc:spigot-api:1.17-R0.1-SNAPSHOT'
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.5.31'
+    compileOnly 'de.neo.jagil:JAGIL:2.2.0_4'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.6.0'
 }
 
 publishing {
     publications {
         maven(MavenPublication) {
-            from components.java
+            artifact shadowJar
         }
     }
 
